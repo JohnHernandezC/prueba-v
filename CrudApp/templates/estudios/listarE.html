@@ -1,0 +1,44 @@
+{% extends 'principales/index.html' %}
+{% block body %}
+
+<div class="container-fluid">
+
+    <br />
+    <a href=" {%url 'crud:crear-Estudios' %}">Registrar nuevo usuario</a>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Empleado</th>
+            <th scope="col">Fechas</th>
+            <th scope="col">Estudios</th>
+            <th scope="col">institucion</th>
+            <th scope="col">Titulo</th>
+            
+            <th scope="col">opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in EstudiosL %}
+          <tr>
+            
+            <td>{{i.id}}</td>
+            <td>{{i.empleado_id_Em.u_nombres}}</td>
+            <td>{{i.fechas}}</td>
+            <td>{{i.estudios}}</td>
+            <td>{{i.institucion}}</td>
+            <td>{{i.titulo}}</td>
+            
+            
+            <td><a class="btn btn-primary" href="{%url 'crud:actualizar-Estudios' i.id %}">Actualizar</a></td>
+            <td><a class="btn btn-danger" href=" {%url 'crud:borrar-Estudios' i.id %}">eliminar</a></td>
+          </tr>
+          {% endfor %}
+        
+        </tbody>
+      </table>
+</div>
+
+
+
+{% endblock %}

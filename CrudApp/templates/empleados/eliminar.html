@@ -1,0 +1,27 @@
+{% extends 'principales/index.html' %}
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+
+       <form method="POST" >
+        {% csrf_token %}
+        <h2>desea eliminar el registro  {{ Empleado.u_nombres}}</h2>
+        <button class="btn btn-danger" type="submit">Eliminar</button>
+        <a class="btn btn-success" href="{% url 'crud:listar-Empleados' %}">cancelar</a>
+       
+
+        
+        
+    </form>
+
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

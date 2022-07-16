@@ -1,0 +1,46 @@
+{% extends 'principales/index.html' %}
+{% block body %}
+
+<div class="container-fluid">
+
+    <br />
+    <a href=" {%url 'crud:crear-Experiencia' %}">Registrar nuevo usuario</a>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Empleado</th>
+            <th scope="col">Fechas</th>
+            <th scope="col">Empresa</th>
+            <th scope="col">Jefe</th>
+            <th scope="col">Cargo</th>
+            <th scope="col">Responsabilidades</th>
+            <th scope="col">Logros</th>
+            <th scope="col">opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in ExperienciaL %}
+          <tr>
+            
+            <td>{{i.id}}</td>
+            <td>{{i.empleado_id_Ex.u_nombres}}</td>
+            <td>{{i.fechas}}</td>
+            <td>{{i.empresa}}</td>
+            <td>{{i.jefe}}</td>
+            <td>{{i.cargo}}</td>
+            <td>{{i.responsabilidades}}</td>
+            <td>{{i.logros}}</td>
+            
+            <td><a class="btn btn-primary" href="{%url 'crud:actualizar-Experiencia' i.id %}">Actualizar</a></td>
+            <td><a class="btn btn-danger" href=" {%url 'crud:borrar-Experiencia' i.id %}">eliminar</a></td>
+          </tr>
+          {% endfor %}
+        
+        </tbody>
+      </table>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'principales/index.html' %}
+{% block body %}
+
+<div class="container-fluid">
+
+    <br />
+    <a href=" {%url 'crud:crear-Empleados'  %}">Registrar nuevo usuario</a>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Tipo Documento</th>
+            <th scope="col">Documento</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Email</th>
+            <th scope="col">Tipo de sangre</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in EmpleadosL %}
+          <tr>
+            
+            <td>{{i.id}}</td>
+            <td>{{i.u_nombres}}</td>
+            <td>{{i.u_apellidos}}</td>
+            <td>{{i.u_tipoDpocumento}}</td>
+            <td>{{i.u_identificacion}}</td>
+            <td>{{i.u_telefono}}</td>
+            <td>{{i.u_email}}</td>
+            <td>{{i.u_tipoSangre}}</td>
+            <td><img alt="Bootstrap Image Preview" src="{{i.u_imagen}}" class="rounded-circle" /></td>
+            <td><a class="btn btn-primary" href="{%url 'crud:actualizar-Empleados' i.id %}">Actualizar</a></td>
+            <td><a  class="btn btn-danger" href=" {%url 'crud:borrar-Empleados' i.id %}">eliminar</a></td>
+          </tr>
+          {% endfor %}
+        
+        </tbody>
+      </table>
+</div>
+
+
+
+{% endblock %}

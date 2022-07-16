@@ -1,0 +1,66 @@
+{% extends 'principales/index.html' %}
+
+{% block body %}
+
+  
+
+ 
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<h5 class="card-header">
+					Inicio de sesion
+				</h5>
+				<div class="card-body">
+					<form method="POST">
+            {% csrf_token %}
+            <img class="mb-4  img-centered rounded-circle d-block mx-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu5H-Ih4ojE7KqCNSIfYw2UM0TcXeK6S8tWA&usqp=CAU" alt="" width="72" height="57">
+            
+            {% if form.error_messages %}
+                  <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss = "alert" aria-label = "Close">
+                      <span aria-hidden = "true">&times;</span>
+                    </button>
+                    <strong>Advertencia: </strong> {{ form.get_invalid_login_error }}
+                  </div>
+              {% endif %}
+        
+            <div class="form-floating">
+                {{ form.username  }}
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                {{ form.password }}
+              <label for="floatingPassword">Password</label>
+            </div>
+        
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button  type="submit" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+          </form>
+				</div>
+				<div class="card-footer text-center">
+					Registrate
+				</div>
+        <a class="btn btn-danger" href="{% url 'crud:crear-Empleados' %}">registro</a>
+			</div>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+             
+
+                    
+
+          
+
+
+{% endblock body %}

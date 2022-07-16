@@ -1,0 +1,107 @@
+{% extends 'principales/index.html' %}
+
+{% block body %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<h5 class="card-header">
+					Registrar
+				</h5>
+				<div class="card-body">
+					
+					<form method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+						
+						<form method="post" enctype="multipart/form-data">
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Nombre</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.u_nombres}}
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Apellido</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.u_apellidos}}
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Tipo Documento</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.u_tipoDpocumento}}
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Documento</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.u_identificacion}}
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Telefono</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.u_telefono}}
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Email</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.u_email}}
+								</div>
+							</div>
+				
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Tipo sangre</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.u_tipoSangre}}
+								</div>
+							</div>
+				
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Foto</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.u_imagen}}
+								</div>
+							</div>
+				
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Ingrese su contraseña</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.password1}} 
+								</div>
+							</div>
+				
+							<div class="mb-3 row">
+								<label for="inputName" class="col-xs-4 col-form-label">Ingrese su contraseña nuevamente</label>
+								<div class="col-xs-8">
+									{{EmpleadosForm.password2}} 
+								</div>
+							</div>
+				
+							
+							
+				
+			
+						
+						
+			
+						<div class="mb-3 row">
+							<div class="offset-sm-4 col-sm-8">
+								<button type="submit" class="btn btn-primary">Registrar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="card-footer">
+					Card footer
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+{% endblock %}
